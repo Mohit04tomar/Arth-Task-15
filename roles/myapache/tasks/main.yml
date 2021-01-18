@@ -1,0 +1,18 @@
+---
+# tasks file for myapache
+
+- name: Installing Softwares
+  package:
+          name: "{{  item  }}"
+          state: present
+  loop: "{{  soft_item  }}"
+
+- name: Copying webpage
+  copy:
+          src: "index.php"
+          dest: "/var/www/html/index.php"
+
+- name: Starting Web Services
+  service:
+          name: httpd
+          state: restarted  

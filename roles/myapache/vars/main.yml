@@ -1,0 +1,6 @@
+---
+# vars file for myapache
+
+soft_item:
+        - httpd
+        - php
